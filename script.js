@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 function getComputerChoice() {
     const randValue = Math.random() * 100
     if (randValue < 34) {
@@ -13,54 +23,61 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     playerTemp = playerSelection.toLowerCase();
     computerTemp = computerSelection.toLowerCase();
-    playerWins = 0;
-    computerWins = 0;
 
     if (playerTemp == 'rock' && computerTemp == 'scissors') {
-        playerWins++;
-        return "You Win! Rock beats scissors"
+        return [true, playerTemp, computerTemp]
     }else if (playerTemp == 'paper' && computerTemp == 'rock') {
-        playerWins++;
-        return "You Win! Paper beats rock"
+        return [true, playerTemp, computerTemp]
     }else if (playerTemp == 'scissors' && computerTemp == 'paper') {
-        playerWins++;
-        return "You Win! Scissors beats paper"
+        return [true, playerTemp, computerTemp]
     }else if (computerTemp == 'rock' && playerTemp == 'scissors') {
-        computerWins++;
-        return "You Lose! Rock beats scissors"
+        return [false, playerTemp, computerTemp]
     }else if (computerTemp == 'paper' && playerTemp == 'rock') {
-        computerWins++;
-        return "You Lose! Paper beats rock"
+        return [false, playerTemp, computerTemp]
     }else if (computerTemp == 'scissors' && playerTemp == 'paper') {
-        computerWins++;
-        return "You Lose! Scissors beats paper"
+        return [false, playerTemp, computerTemp]
     }else if (computerTemp == playerTemp) {
-        computerWins++;
-        return ("Draw! Both selected " + computerTemp)
+        return null
     }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt('Rock, Paper, or Scissors?')
-        const computerSelection = getComputerChoice()
-        console.log(playRound(playerSelection, computerSelection))
-        // console.log(playerSelection)
-    }
-    /*
-    if (computerWins > playerWins) {
-        console.log(computerWins);
-        console.log(playerWins);
-    }else if (playerWins > computerWins) {
-        console.log(playerWins);
-        console.log(computerWins);
-    }else {
-        console.log(playerWins);
-        console.log(computerWins);
-        console.log('Draw!');
-    }
-    */
+
+
+
+
+
+
+    
+
+
+
+const rockID = document.querySelector("#rock");
+const paperID = document.querySelector("#paper");
+const scissorsID = document.querySelector("#scissors");
+
+
+
+
+
+
+
+function displayOutcome() {
+    console.log("nice")
 }
 
-game()
 
+function rock() {
+    playRound('rock', getComputerChoice());
+}
+
+function paper() {
+    playRound('paper', getComputerChoice());
+}
+
+function scissors() {
+    playRound('scissors', getComputerChoice());
+}
+
+
+
+rockID.addEventListener('click', rock());

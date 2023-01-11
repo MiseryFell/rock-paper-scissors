@@ -1,0 +1,30 @@
+html, body {
+    margin:0px;
+    padding:0px;
+    border:0px;
+    background-color:rgb(195, 227, 76);
+    height:100vh;
+}
+
+body {
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.wrapper {
+    width:80%;
+    height:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-content:center;
+}
+
+.btn {
+    width:28%;
+    height:45%;
+    background-color:rgb(217, 180, 111);
+    border-color:gray;
+}
