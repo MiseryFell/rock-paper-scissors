@@ -10,7 +10,7 @@ body {
     height:100%;
     width:100%;
     display:flex;
-    justify-content:center;
+    justify-content: center;
 }
 
 .wrapper {
@@ -27,4 +27,14 @@ body {
     height:45%;
     background-color:rgb(217, 180, 111);
     border-color:gray;
+}
+
+.text-box {
+    width:65%;
+    height:45%;
+    justify-content:center;
+    align-content:center;
+    background-color:white;
+    display: flex;
+    align-items: center;
 }

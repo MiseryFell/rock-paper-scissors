@@ -36,7 +36,8 @@ function playRound(playerSelection, computerSelection) {
 const rockReference = document.getElementById('rock');
 const paperReference = document.getElementById('paper');
 const scissorsReference = document.getElementById('scissors');
-const wrapper = document.getElementsByClassName('wrapper');
+const gameWrapper = document.getElementById('game-wrapper');
+const body = document.getElementById('parent');
 
 // 
 
@@ -96,22 +97,42 @@ scissorsReference.addEventListener('click', () => {
 });
 
 
+// Handles ending of match and UI changes
+
+
+const endingWrapper = document.createElement('div');
+endingWrapper.setAttribute('class', 'wrapper');
+const textBox = document.createElement('div');
+textBox.setAttribute('class', 'text-box')
+
+
+endingWrapper.appendChild(textBox);
+
+
+
 function checkWins() {
     if (playerWins >= 5) {
         console.log("player win");
+        outcomeWin('Player');
     }
     
     if (computerWins >= 5) {
         console.log("computer win");
+        outcomeWin('Computer');
     }
 }
 
 
 
 function outcomeWin(winner='null') {
-    while (wrapper.firstChild) {
-        wrapper.removeChild(wrapper.firstChild);
-      }
+    gameWrapper.remove();
+    // body.removeChild(gameWrapper);
+    let msToWait = 500;
+    setTimeout(() => {
+        console.log('waited');
+    }, msToWait);
+    body.appendChild(endingWrapper);
+    textBox.textContent += `${winner} wins!`;
+
 }
 
-outcomeWin()
