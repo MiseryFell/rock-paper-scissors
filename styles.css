@@ -37,4 +37,55 @@ body {
     background-color:white;
     display: flex;
     align-items: center;
+    flex-wrap:wrap;
+}
+
+#main-box-text {
+    height:66%;
+    width:100%;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+#text-box-buttons {
+    height:34%;
+    width:100%;
+    display:flex;
+    align-content:space-around;
+    justify-content:space-around;
+}
+
+.text-box-button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height:20%;
+}
+
+.text-box-button:hover,
+.text-box-button:focus {
+    background: #0053ba;
+}
+
+.text-box-button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.text-box-button:active {
+    transform: scale(0.99);
 }

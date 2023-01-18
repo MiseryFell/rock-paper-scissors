@@ -101,12 +101,27 @@ scissorsReference.addEventListener('click', () => {
 
 
 const endingWrapper = document.createElement('div');
-endingWrapper.setAttribute('class', 'wrapper');
 const textBox = document.createElement('div');
-textBox.setAttribute('class', 'text-box')
+const mainBoxText = document.createElement('div');
+const boxButtons = document.createElement('div');
+const restartButton = document.createElement('btn');
+const endButton = document.createElement('btn');
 
+endingWrapper.setAttribute('class', 'wrapper');
+textBox.setAttribute('class', 'text-box');
+mainBoxText.setAttribute('id', 'main-box-text');
+boxButtons.setAttribute('id', 'text-box-buttons');
+restartButton.setAttribute('class', 'text-box-button');
+endButton.setAttribute('class', 'text-box-button');
 
 endingWrapper.appendChild(textBox);
+textBox.appendChild(mainBoxText);
+textBox.appendChild(boxButtons);
+boxButtons.appendChild(restartButton);
+boxButtons.appendChild(endButton);
+
+restartButton.textContent = "Restart?";
+endButton.textContent = "I give up...";
 
 
 
@@ -123,16 +138,19 @@ function checkWins() {
 }
 
 
+restartButton.addEventListener('click', () => {
+    console.log('nice');
+});
+
 
 function outcomeWin(winner='null') {
     gameWrapper.remove();
     // body.removeChild(gameWrapper);
-    let msToWait = 500;
+    let msToWait = 2000;
     setTimeout(() => {
         console.log('waited');
     }, msToWait);
     body.appendChild(endingWrapper);
-    textBox.textContent += `${winner} wins!`;
-
+    mainBoxText.textContent = `${winner} wins!`;
 }
 
