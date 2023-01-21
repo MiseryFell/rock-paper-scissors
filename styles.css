@@ -2,7 +2,7 @@ html, body {
     margin:0px;
     padding:0px;
     border:0px;
-    background-color:rgb(195, 227, 76);
+    background-color:rgb(43, 40, 48);
     height:100vh;
 }
 
@@ -11,15 +11,36 @@ body {
     width:100%;
     display:flex;
     justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .wrapper {
+    height:100%;
     width:80%;
+}
+
+#ending-wrapper {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-content:center;
+    flex-direction:column;
+}
+
+#game-wrapper {
+    width:50%;
     height:100%;
     display:flex;
     flex-wrap:wrap;
     justify-content: space-around;
     align-content:center;
+    flex-direction:column;
+}
+
+#computer-wrapper {
+    width:50%;
+    height:fit-content;
 }
 
 .btn {
@@ -34,15 +55,19 @@ body {
     height:45%;
     justify-content:center;
     align-content:center;
-    background-color:white;
+    background-color:rgb(63, 59, 71);
     display: flex;
     align-items: center;
     flex-wrap:wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size:50px;
 }
 
 #main-box-text {
     height:66%;
     width:100%;
+    font-family: sans-serif;
+    color:#FFFFFF;
     text-align: center;
     flex-direction: column;
     display: flex;
@@ -58,22 +83,26 @@ body {
 }
 
 .text-box-button {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
     border: none;
     padding: 1rem 2rem;
     margin: 0;
     text-decoration: none;
-    background: #0069ed;
+    background: #014ba5;
     color: #ffffff;
     font-family: sans-serif;
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
+    align-content:center;
+    justify-content:center !important;
     transition: background 250ms ease-in-out, 
                 transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
     height:20%;
+    flex-wrap: wrap;
 }
 
 .text-box-button:hover,
@@ -88,4 +117,15 @@ body {
 
 .text-box-button:active {
     transform: scale(0.99);
+}
+
+#computer-text {
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    color:rgb(220, 220, 220);
+    font:50px sans-serif;
 }
