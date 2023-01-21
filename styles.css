@@ -89,7 +89,7 @@ body {
     padding: 1rem 2rem;
     margin: 0;
     text-decoration: none;
-    background: #014ba5;
+    background: #022f66;
     color: #ffffff;
     font-family: sans-serif;
     font-size: 1rem;
@@ -103,11 +103,12 @@ body {
     -moz-appearance: none;
     height:20%;
     flex-wrap: wrap;
+    font-size: 20px;
 }
 
 .text-box-button:hover,
 .text-box-button:focus {
-    background: #0053ba;
+    background: #014497;
 }
 
 .text-box-button:focus {

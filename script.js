@@ -40,18 +40,15 @@ const gameWrapper = document.getElementById('game-wrapper');
 const body = document.getElementById('parent');
 const computerWrapper = document.getElementById('computer-wrapper');
 
-// 
+
+// Variables tracking the number of wins that each player has
 
 
 playerWins = 0;
 computerWins = 0;
 
 
-
-
-
-
-
+// This section adds event handling and controls computer display output
 
 
 rockReference.addEventListener('click', () => {
@@ -133,7 +130,6 @@ const textBox = document.createElement('div');
 const mainBoxText = document.createElement('div');
 const boxButtons = document.createElement('div');
 const restartButton = document.createElement('btn');
-// const endButton = document.createElement('btn');
 const computerText = document.createElement('p');
 
 endingWrapper.setAttribute('class', 'wrapper');
@@ -142,19 +138,17 @@ textBox.setAttribute('class', 'text-box');
 mainBoxText.setAttribute('id', 'main-box-text');
 boxButtons.setAttribute('id', 'text-box-buttons');
 restartButton.setAttribute('class', 'text-box-button');
-// endButton.setAttribute('class', 'text-box-button');
 computerText.setAttribute('id', 'computer-text');
 
 endingWrapper.appendChild(textBox);
 textBox.appendChild(mainBoxText);
 textBox.appendChild(boxButtons);
 boxButtons.appendChild(restartButton);
-// boxButtons.appendChild(endButton);
 computerWrapper.appendChild(computerText);
 
 restartButton.textContent = "Restart?";
-// endButton.textContent = "I give up...";
 computerText.textContent = "Computer Output: Waiting";
+
 
 
 
@@ -181,18 +175,9 @@ restartButton.addEventListener('click', () => {
 });
 
 
-/*
-endButton.addEventListener('click', () => {
-    console.log('end button click');
-    window.open('','_self').close();
-});
-*/
-
-
 function outcomeWin(winner='null') {
     gameWrapper.remove();
     computerWrapper.remove();
-    // body.removeChild(gameWrapper);
     let msToWait = 2000;
     setTimeout(() => {
         console.log('waited');
